@@ -18,6 +18,16 @@ import org.apache.hadoop.mapreduce.OutputFormat;
 import org.apache.hadoop.mapreduce.RecordWriter;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 
+/**
+ * {@link OutputFormat} that writes JSON key blobs as Avro files.  It throws away the value.
+ * 
+ * Since this class wraps {@link AvroKeyOutputFormat}, it inherits configuration for that class.
+ * 
+ * @author bskaggs
+ *
+ * @param <K>
+ * @param <V> Value type; ignored.
+ */
 public class JsonAsAvroOutputFormat<K, V> extends OutputFormat<Text, V> {
 	private AvroKeyOutputFormat<K> inner;
 	

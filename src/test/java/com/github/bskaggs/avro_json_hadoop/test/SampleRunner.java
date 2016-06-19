@@ -12,6 +12,11 @@ import org.apache.hadoop.util.ToolRunner;
 
 import com.github.bskaggs.avro_json_hadoop.AvroAsJsonKeyInputFormat;
 
+/**
+ * Runs a map-only job that converts Avro to line-delimited JSON.
+ * @author brad
+ *
+ */
 public class SampleRunner extends Configured implements Tool {
 
 	public int run(String[] args) throws Exception {
@@ -26,7 +31,7 @@ public class SampleRunner extends Configured implements Tool {
         Path out = new Path(args[1]);
         
         // Specify various job-specific parameters     
-        job.setJobName("AVRO JSON");
+        job.setJobName("AVRO JSON Test");
         job.setInputFormatClass(AvroAsJsonKeyInputFormat.class);
         AvroAsJsonKeyInputFormat.setInputPaths(job, in);
         job.setMapOutputKeyClass(Text.class);

@@ -9,6 +9,13 @@ import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.LineRecordReader;
 
+/**
+ * {@link RecordReader} that emits (@{link Text}, @{link {@link NullWritable}) pairs.
+ * It wraps a {@line LineRecordReader}, so it inherits all its configuration.
+ * 
+ * @author bskaggs
+ *
+ */
 public class TextLineRecordReader extends RecordReader<Text, NullWritable> {
 	
 	private LineRecordReader inner = new LineRecordReader();

@@ -34,6 +34,7 @@ import org.apache.avro.io.DatumWriter;
 import org.apache.avro.io.JsonEncoder;
 import org.apache.avro.io.TerseJsonEncoder;
 import org.apache.avro.mapred.FsInput;
+import org.apache.avro.mapreduce.AvroRecordReaderBase;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.Path;
@@ -48,6 +49,8 @@ import org.slf4j.LoggerFactory;
 
 
 /**
+ * Modified from {@link AvroRecordReaderBase}
+ * 
  * Abstract base class for <code>RecordReader</code>s that read Avro container files.
  *
  * @param <K> The type of key the record reader should generate.
